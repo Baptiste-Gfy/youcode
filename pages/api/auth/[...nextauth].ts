@@ -12,8 +12,8 @@ export const authOptions: AuthOptions = {
   },
   providers: [
     GithubProvider({
-      clientId: env.GHITHUB_ID,
-      clientSecret: env.GHITHUB_SECRET,
+      clientId: env.GITHUB_ID,
+      clientSecret: env.GITHUB_SECRET,
     }),
   ],
   callbacks: {
