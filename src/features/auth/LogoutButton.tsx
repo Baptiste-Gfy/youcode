@@ -8,7 +8,7 @@ import { signOut } from "next-auth/react";
 
 export const LogoutButton = () => {
   const mutation = useMutation({
-    mutationFn: async () => signOut(),
+    mutationFn: async () => signOut({ callbackUrl: "http://localhost:3000" }),
   });
 
   return (
