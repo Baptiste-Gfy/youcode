@@ -9,7 +9,7 @@ import { getAuthSession } from "@/lib/auth";
 import { CourseCard } from "../courses/CourseCard";
 import { getCourses } from "../courses/course.query";
 
-export default async function ExplorerPage() {
+export default async function CoursesPage() {
   const session = await getAuthSession();
 
   if (!session?.user.id) {
@@ -24,9 +24,10 @@ export default async function ExplorerPage() {
         <LayoutTitle>Your courses</LayoutTitle>
       </LayoutHeader>
       <LayoutContent className="grid grid-cols-1 gap-4 md:grid-cols-2 2xl:grid-cols-3">
-        {courses.map((course) => (
-          <CourseCard course={course} key={course.id} />
-        ))}
+        {courses.map((course) => {
+          console.log(course);
+          return <CourseCard course={course} key={course.id} />;
+        })}
       </LayoutContent>
     </Layout>
   );
